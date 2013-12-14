@@ -1,0 +1,18 @@
+h1 All Entries
+
+= render 'form'
+
+table class="table table-striped"
+  thread
+    tr
+      th コメント
+      th カテゴリー
+  tbody
+    - @entries.each do |entry|
+      tr
+        td width="80%"= entry.comment
+        td= entry.category
+
+= paginate @entries
+
+br
